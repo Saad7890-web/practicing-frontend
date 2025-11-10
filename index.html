@@ -5,727 +5,379 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pikiz - Digital Agency</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --bg-primary: #F4EBE0;
-            --bg-dark: #2D2D2D;
-            --accent-orange: #FF6B35;
-            --accent-mint: #A8D5BA;
-            --accent-teal: #7CB9E8;
-            --text-dark: #1A1A1A;
-            --text-light: #666666;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-dark);
-font-family: 'Poppins', sans-serif;
-
-            line-height: 1.6;
-        }
-
-        .btn-orange {
-            background-color: var(--accent-orange);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-orange:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .stat-circle {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .stat-orange {
-            background-color: var(--accent-orange);
-            color: white;
-        }
-
-        .stat-mint {
-            background-color: var(--accent-mint);
-            color: var(--text-dark);
-        }
-
-        .stat-teal {
-            background-color: var(--accent-teal);
-            color: white;
-        }
-
-        .stat-circle .number {
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .stat-circle .label {
-            font-size: 12px;
-            margin-top: 4px;
-            font-weight: 500;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 24px;
-        }
-
-        .portfolio-item {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 14px;
-        }
-
-        .portfolio-content {
-            padding: 20px;
-        }
-
-        .portfolio-content h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .portfolio-content p {
-            color: var(--text-light);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .service-item {
-            padding: 24px;
-            border-radius: 12px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .service-icon.orange {
-            background-color: var(--accent-orange);
-            color: white;
-        }
-
-        .faq-item {
-            padding: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background-color: rgba(255, 107, 53, 0.05);
-        }
-
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            color: var(--text-light);
-            margin-top: 12px;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 200px;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            padding: 20px;
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-
-        .blog-image {
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .blog-content h3 {
-            font-size: 16px;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-
-        .blog-content p {
-            color: var(--text-light);
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
-
-        .blog-meta {
-            font-size: 12px;
-            color: #999;
-        }
-
-/* CTA Section Styling */
-.cta-section {
-    background-color: #F4EBE0; /* Soft beige background */
-    text-align: center;
-}
-
-.cta-section h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #120C1F; /* Dark color for text */
-    margin-bottom: 30px;
-}
-
-.cta-section button {
-    background-color: #2D2D2D; /* Dark color for the button */
-    color: white;
-    font-size: 1.125rem;
-    padding: 1.25rem 3rem;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-.cta-section button:hover {
-    background-color: #e15f00; /* Darker shade of orange on hover */
-    transform: scale(1.05);
-}
-
-
-        @media (max-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-circle {
-                width: 100px;
-                height: 100px;
-            }
-
-            .stat-circle .number {
-                font-size: 24px;
-            }
-
-            .blog-card {
-                flex-direction: column;
-            }
-
-            .blog-image {
-                width: 100%;
-                height: 150px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
-    <header class="sticky top-0 bg-white/95 backdrop-blur z-50 border-b border-gray-200">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <div class="text-2xl font-bold" style="color: var(--accent-orange);">✦</div>
-                <span class="text-xl font-bold">Pikiz</span>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo-wrapper">
+                <div class="logo-icon">✦</div>
+                <span class="logo-text">Pikiz</span>
             </div>
-            <nav class="hidden md:flex gap-8">
-                <a href="#services" class="text-sm text-gray-600 hover:text-black transition">Services</a>
-                <a href="#works" class="text-sm text-gray-600 hover:text-black transition">Works</a>
-                <a href="#faq" class="text-sm text-gray-600 hover:text-black transition">FAQ</a>
-                <a href="#blog" class="text-sm text-gray-600 hover:text-black transition">Blog</a>
+            <nav class="main-navigation">
+                <ul class="nav-list">
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#works" class="nav-link">Works</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#blog" class="nav-link">Blog</a></li>
+                </ul>
             </nav>
-            <button class="btn-orange text-sm">Let's Talk</button>
+            <button class="header-button">Let's Talk</button>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="pt-20 pb-12 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="inline-block bg-orange-100 px-4 py-2 rounded-full text-sm text-orange-800 mb-6">
-                        🚀 Innovating Digital Solutions
-                    </div>
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                        <span style="color: var(--text-dark);">DIGITAL</span><br>
-                        <span style="color: var(--accent-orange);">THRIVE</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-                        Transform your business with cutting-edge digital strategy, design, and development solutions tailored to your success.
-                    </p>
-                    <button class="btn-orange mr-4">Start Project</button>
-                    <button class="border-2 border-gray-300 px-8 py-3 rounded-full hover:border-gray-400 transition">Learn More</button>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 Innovating Digital Solutions</div>
+                <h1 class="hero-title">
+                    <span class="hero-title-dark">DIGITAL</span><br>
+                    <span class="hero-title-accent">THRIVE</span>
+                </h1>
+                <p class="hero-description">
+                    Transform your business with cutting-edge digital strategy, design, and development solutions tailored to your success.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Start Project</button>
+                    <button class="btn-secondary">Learn More</button>
                 </div>
-                <div class="rounded-lg">
-                    <img class="rounded-lg" src="./assets/hero-person.jpg" alt="">
-                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img class="hero-image" src="./assets/hero-person.jpg" alt="Hero Person">
             </div>
         </div>
     </section>
 
     <!-- Agency Stats -->
-    <section class="py-16 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-20">
-                <div class="stat-circle stat-mint">
-                    <div class="number">7.1k</div>
-                    <div class="label">Happy Clients</div>
-                </div>
-                <div class="stat-circle stat-orange">
-                    <div class="number">1200</div>
-                    <div class="label">Projects Done</div>
-                </div>
-                <div class="stat-circle stat-teal">
-                    <div class="number">20k</div>
-                    <div class="label">Hours Invested</div>
-                </div>
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-circle stat-mint">
+                <div class="stat-number">7.1k</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-circle stat-orange">
+                <div class="stat-number">1200</div>
+                <div class="stat-label">Projects Done</div>
+            </div>
+            <div class="stat-circle stat-teal">
+                <div class="stat-number">20k</div>
+                <div class="stat-label">Hours Invested</div>
             </div>
         </div>
     </section>
 
     <!-- Keywords Strip -->
-    <section class="bg-white py-8 px-4 border-y border-gray-200">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-sm font-semibold text-gray-700 text-center">
-                <div>DIGITAL WORK</div>
-                <div>FEATURE DESIGN</div>
-                <div>DESIGN MARK</div>
-                <div>BRANDING</div>
-            </div>
+    <section class="keywords-section">
+        <div class="keywords-container">
+            <div class="keyword-item">DIGITAL WORK</div>
+            <div class="keyword-item">FEATURE DESIGN</div>
+            <div class="keyword-item">DESIGN MARK</div>
+            <div class="keyword-item">BRANDING</div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-<section class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-5xl  font-bold mb-12">
-      Our Recent  Works
-    </h2>
-
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Column 1 -->
-      <div class="space-y-6">
-        <div class="relative group overflow-hidden rounded-2xl">
-          <img src="assets/work-1.jpg" alt="Interior Design" class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-          <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-            <p class="text-xs font-medium text-gray-800">Interior Design</p>
-          </div>
+    <section class="portfolio-section" id="works">
+        <div class="portfolio-container">
+            <h2 class="portfolio-title">Our Recent Works</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-column">
+                    <div class="portfolio-item">
+                        <img src="assets/work-1.jpg" alt="Interior Design" class="portfolio-image portfolio-image-tall">
+                        <div class="portfolio-label">
+                            <p class="portfolio-label-text">Interior Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/work-2.jpg" alt="Brand Strategy" class="portfolio-image portfolio-image-medium">
+                        <div class="portfolio-label">
+                            <p class="portfolio-label-text">Brand Strategy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-column">
+                    <div class="portfolio-item">
+                        <img src="assets/work-3.jpg" alt="Collaboration" class="portfolio-image portfolio-image-medium">
+                        <div class="portfolio-label">
+                            <p class="portfolio-label-text">Collaboration</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/work-4.jpg" alt="Creative Work" class="portfolio-image portfolio-image-tall">
+                        <div class="portfolio-label">
+                            <p class="portfolio-label-text">Creative Work</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-column">
+                    <div class="portfolio-item">
+                        <img src="assets/work-5.jpg" alt="Web Design" class="portfolio-image portfolio-image-tall">
+                        <div class="portfolio-label">
+                            <p class="portfolio-label-text">Web Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="assets/work-6.jpg" alt="Consultation" class="portfolio-image portfolio-image-medium">
+                        <div class="portfolio-label">
+                            <p class="portfolio-label-text">Consultation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="relative group overflow-hidden rounded-2xl">
-          <img src="assets/work-2.jpg" alt="Brand Strategy" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
-          <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-            <p class="text-xs font-medium text-gray-800">Brand Strategy</p>
-          </div>
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="services-container">
+            <div class="services-header">
+                <h2 class="services-title">Our Services</h2>
+                <p class="services-description">
+                    We provide comprehensive digital solutions tailored to elevate your brand and drive sustainable growth in the digital landscape.
+                </p>
+            </div>
+            <div class="services-list">
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <img src="assets/service-1.jpg" alt="Brand Strategy" class="service-image">
+                        <div class="service-text">
+                            <h3 class="service-name">Brand Strategy</h3>
+                            <p class="service-description">
+                                Crafting compelling brand identities that resonate with your target audience and stand out in the market.
+                            </p>
+                        </div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <img src="assets/service-2.jpg" alt="Web Design" class="service-image">
+                        <div class="service-text">
+                            <h3 class="service-name">Web Design</h3>
+                            <p class="service-description">
+                                Creating stunning, user-friendly websites that deliver exceptional experiences and drive conversions.
+                            </p>
+                        </div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <img src="assets/service-3.jpg" alt="Digital Marketing" class="service-image">
+                        <div class="service-text">
+                            <h3 class="service-name">Digital Marketing</h3>
+                            <p class="service-description">
+                                Implementing data-driven marketing strategies to maximize your online presence and ROI.
+                            </p>
+                        </div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-content">
+                        <img src="assets/service-4.jpg" alt="Creative Solutions" class="service-image">
+                        <div class="service-text">
+                            <h3 class="service-name">Creative Solutions</h3>
+                            <p class="service-description">
+                                Delivering innovative creative solutions that bring your vision to life and captivate your audience.
+                            </p>
+                        </div>
+                        <div class="service-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Column 2 -->
-      <div class="space-y-6">
-        <div class="relative group overflow-hidden rounded-2xl">
-          <img src="assets/work-3.jpg" alt="Collaboration" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
-          <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-            <p class="text-xs font-medium text-gray-800">Collaboration</p>
-          </div>
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2 class="faq-title">FAQ</h2>
+                <div class="faq-icon-badge">
+                    <span>✦</span>
+                </div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-card">
+                    <button class="faq-question-button">
+                        <span>What services do you offer?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        We offer comprehensive digital services including brand strategy, web design, digital marketing, and creative solutions tailored to your business needs.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-question-button">
+                        <span>How long does a typical project take?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Project timelines vary based on scope and complexity, but most projects are completed within 4-12 weeks from start to finish.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-question-button">
+                        <span>What is your pricing structure?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        We offer flexible pricing based on project requirements. Contact us for a detailed quote tailored to your specific needs.
+                    </div>
+                </div>
+                <div class="faq-card">
+                    <button class="faq-question-button">
+                        <span>Do you provide ongoing support?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        Yes, we offer ongoing support and maintenance packages to ensure your digital assets continue to perform optimally.
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="relative group overflow-hidden rounded-2xl">
-          <img src="assets/work-4.jpg" alt="Creative Work" class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-          <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-            <p class="text-xs font-medium text-gray-800">Creative Work</p>
-          </div>
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="blog-container">
+            <h2 class="blog-title">Latest Posts</h2>
+            <div class="blog-list">
+                <div class="blog-post">
+                    <div class="blog-number">01</div>
+                    <div class="blog-content">
+                        <p class="blog-date">March 15, 2024</p>
+                        <h3 class="blog-post-title">How to build a successful digital strategy for your business</h3>
+                    </div>
+                    <img src="assets/blog-1.jpg" alt="Blog 1" class="blog-thumbnail">
+                    <div class="blog-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-number">02</div>
+                    <div class="blog-content">
+                        <p class="blog-date">March 10, 2024</p>
+                        <h3 class="blog-post-title">The future of web design: Trends to watch in 2024</h3>
+                    </div>
+                    <img src="assets/blog-2.jpg" alt="Blog 2" class="blog-thumbnail">
+                    <div class="blog-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="blog-post">
+                    <div class="blog-number">03</div>
+                    <div class="blog-content">
+                        <p class="blog-date">March 5, 2024</p>
+                        <h3 class="blog-post-title">Maximizing ROI through data-driven marketing campaigns</h3>
+                    </div>
+                    <img src="assets/blog-3.jpg" alt="Blog 3" class="blog-thumbnail">
+                    <div class="blog-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <!-- Column 3 -->
-      <div class="space-y-6">
-        <div class="relative group overflow-hidden rounded-2xl">
-          <img src="assets/work-5.jpg" alt="Web Design" class="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105" />
-          <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-            <p class="text-xs font-medium text-gray-800">Web Design</p>
-          </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title">Smart Strategies. Smarter Digital Solutions. Digital Solutions With Purpose</h2>
+            <button class="cta-button">Get Started</button>
         </div>
+    </section>
 
-        <div class="relative group overflow-hidden rounded-2xl">
-          <img src="assets/work-6.jpg" alt="Consultation" class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" />
-          <div class="absolute bottom-4 left-4 bg-white/90 rounded-lg px-3 py-2">
-            <p class="text-xs font-medium text-gray-800">Consultation</p>
-          </div>
+    <!-- Contact Footer -->
+    <footer class="site-footer">
+        <h2 class="footer-logo">PIKIZ</h2>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3 class="footer-heading">Let's Talk</h3>
+                    <p class="footer-description">
+                        Ready to elevate your digital presence? Get in touch with us today and let's create something amazing together.
+                    </p>
+                </div>
+                <div class="footer-right">
+                    <div class="footer-contact">
+                        <p class="footer-contact-item">hello@pikiz.com</p>
+                        <p class="footer-contact-item">+1 (555) 123-4567</p>
+                        <p class="footer-contact-item">123 Digital Avenue<br/>Tech City, TC 12345</p>
+                    </div>
+                    <div class="footer-action">
+                        <button class="footer-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </footer>
 
-
-<!-- Services Section -->
-<section class="py-20" style="background-color: var(--bg-dark); color: white;">
-  <div class="max-w-6xl mx-auto px-6">
-    <!-- Header -->
-    <div class="mb-12">
-      <h2 class="text-5xl font-bold mb-4">Our Services</h2>
-      <p class="text-sm text-white/70 max-w-xl">
-        We provide comprehensive digital solutions tailored to elevate your brand and drive sustainable growth in the digital landscape.
-      </p>
-    </div>
-
-    <!-- Services List -->
-    <div class="space-y-6">
-      <!-- Service 1 -->
-      <div class="group border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all">
-        <div class="flex items-center gap-6">
-          <img src="assets/service-1.jpg" alt="Brand Strategy" class="w-24 h-28 object-cover rounded-xl" />
-          <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-2">Brand Strategy</h3>
-            <p class="text-sm text-white/70">
-              Crafting compelling brand identities that resonate with your target audience and stand out in the market.
-            </p>
-          </div>
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-[var(--bg-dark)] group-hover:bg-[var(--accent-orange)] group-hover:text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 2 -->
-      <div class="group border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all">
-        <div class="flex items-center gap-6">
-          <img src="assets/service-2.jpg" alt="Web Design" class="w-24 h-28 object-cover rounded-xl" />
-          <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-2">Web Design</h3>
-            <p class="text-sm text-white/70">
-              Creating stunning, user-friendly websites that deliver exceptional experiences and drive conversions.
-            </p>
-          </div>
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-[var(--bg-dark)] group-hover:bg-[var(--accent-orange)] group-hover:text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 3 -->
-      <div class="group border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all">
-        <div class="flex items-center gap-6">
-          <img src="assets/service-3.jpg" alt="Digital Marketing" class="w-24 h-28 object-cover rounded-xl" />
-          <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-2">Digital Marketing</h3>
-            <p class="text-sm text-white/70">
-              Implementing data-driven marketing strategies to maximize your online presence and ROI.
-            </p>
-          </div>
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-[var(--bg-dark)] group-hover:bg-[var(--accent-orange)] group-hover:text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="group border border-white/20 rounded-2xl p-6 hover:bg-white/5 transition-all">
-        <div class="flex items-center gap-6">
-          <img src="assets/service-4.jpg" alt="Creative Solutions" class="w-24 h-28 object-cover rounded-xl" />
-          <div class="flex-1">
-            <h3 class="text-2xl font-bold mb-2">Creative Solutions</h3>
-            <p class="text-sm text-white/70">
-              Delivering innovative creative solutions that bring your vision to life and captivate your audience.
-            </p>
-          </div>
-          <div class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-[var(--bg-dark)] group-hover:bg-[var(--accent-orange)] group-hover:text-white transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-  <!-- FAQ Section -->
-<section class="py-20 bg-gray-100">
-  <div class="max-w-3xl mx-auto px-6">
-    <!-- Header -->
-    <div class="flex items-center gap-4 mb-12">
-      <h2 class="text-5xl font-bold">FAQ</h2>
-      <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center">
-        <span class="text-white text-xl">✦</span>
-      </div>
-    </div>
-
-    <!-- Accordion -->
-    <div class="space-y-4">
-      <!-- Item 1 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold focus:outline-none group">
-          <span>What services do you offer?</span>
-          <svg class="w-5 h-5 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-          </svg>
-        </button>
-        <div class="px-6 py-4 text-gray-600 hidden">
-          We offer comprehensive digital services including brand strategy, web design, digital marketing, and creative solutions tailored to your business needs.
-        </div>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold focus:outline-none group">
-          <span>How long does a typical project take?</span>
-          <svg class="w-5 h-5 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-          </svg>
-        </button>
-        <div class="px-6 py-4 text-gray-600 hidden">
-          Project timelines vary based on scope and complexity, but most projects are completed within 4-12 weeks from start to finish.
-        </div>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold focus:outline-none group">
-          <span>What is your pricing structure?</span>
-          <svg class="w-5 h-5 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-          </svg>
-        </button>
-        <div class="px-6 py-4 text-gray-600 hidden">
-          We offer flexible pricing based on project requirements. Contact us for a detailed quote tailored to your specific needs.
-        </div>
-      </div>
-
-      <!-- Item 4 -->
-      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold focus:outline-none group">
-          <span>Do you provide ongoing support?</span>
-          <svg class="w-5 h-5 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-          </svg>
-        </button>
-        <div class="px-6 py-4 text-gray-600 hidden">
-          Yes, we offer ongoing support and maintenance packages to ensure your digital assets continue to perform optimally.
-        </div>
-      </div>
-    </div>
-  </div>
-
- 
-</section>
-
-
- <!-- Blog Section -->
-<section class="py-20 bg-[var(--bg-primary)]">
-  <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-5xl font-bold mb-12">Latest Posts</h2>
-    <div class="space-y-6">
-      
-      <!-- Blog Post 1 -->
-      <div class="group bg-white rounded-2xl p-6 flex items-center gap-6 hover:shadow-lg transition-shadow">
-        <div class="flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">
-            01
-          </div>
-        </div>
-        <div class="flex-1">
-          <p class="text-xs text-gray-500 mb-1">March 15, 2024</p>
-          <h3 class="text-xl font-semibold">How to build a successful digital strategy for your business</h3>
-        </div>
-        <img src="assets/blog-1.jpg" alt="Blog 1" class="w-32 h-24 object-cover rounded-xl" />
-        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500 text-white transition group-hover:bg-orange-600 cursor-pointer">
-          <!-- Arrow Icon -->
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </div>
-      </div>
-
-      <!-- Blog Post 2 -->
-      <div class="group bg-white rounded-2xl p-6 flex items-center gap-6 hover:shadow-lg transition-shadow">
-        <div class="flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">
-            02
-          </div>
-        </div>
-        <div class="flex-1">
-          <p class="text-xs text-gray-500 mb-1">March 10, 2024</p>
-          <h3 class="text-xl font-semibold">The future of web design: Trends to watch in 2024</h3>
-        </div>
-        <img src="assets/blog-2.jpg" alt="Blog 2" class="w-32 h-24 object-cover rounded-xl" />
-        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500 text-white transition group-hover:bg-orange-600 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </div>
-      </div>
-
-      <!-- Blog Post 3 -->
-      <div class="group bg-white rounded-2xl p-6 flex items-center gap-6 hover:shadow-lg transition-shadow">
-        <div class="flex-shrink-0">
-          <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-white font-bold">
-            03
-          </div>
-        </div>
-        <div class="flex-1">
-          <p class="text-xs text-gray-500 mb-1">March 5, 2024</p>
-          <h3 class="text-xl font-semibold">Maximizing ROI through data-driven marketing campaigns</h3>
-        </div>
-        <img src="assets/blog-3.jpg" alt="Blog 3" class="w-32 h-24 object-cover rounded-xl" />
-        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-500 text-white transition group-hover:bg-orange-600 cursor-pointer">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- CTA Section -->
-<section class="py-20 bg-[#F4EBE0]">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-8 max-w-4xl mx-auto ">
-      Smart Strategies. Smarter Digital Solutions. Digital Solutions With Purpose
-    </h2>
-    <button class="bg-[#FF6B35] text-white rounded-full px-8 py-6 text-lg hover:opacity-90 transition">
-      Get Started
-    </button>
-  </div>
-</section>
-<!-- Contact Footer -->
-<footer class="pt-32 mt-24 bg-[#FF6B35] text-white relative ">
-  <!-- Centered Logo -->
-  <h2 class="absolute z-50  top-0 text-black left-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl md:text-9xl font-bold pointer-events-none">
-    PIKIZ
-  </h2>
-
-  <div class="max-w-6xl mx-auto px-6 relative z-20">
-    <div class="grid md:grid-cols-2 gap-16 items-start">
-      
-      <!-- Left Section -->
-      <div>
-        <h3 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Let's Talk</h3>
-        <p class="text-white/90 text-base leading-relaxed max-w-md">
-          Ready to elevate your digital presence? Get in touch with us today and let's create something amazing together.
-        </p>
-      </div>
-      
-      <!-- Right Section -->
-      <div class="flex flex-col justify-between h-full pt-8">
-        <div class="space-y-4 text-base mb-12">
-          <p class="text-white/90">hello@pikiz.com</p>
-          <p class="text-white/90">+1 (555) 123-4567</p>
-          <p class="text-white/90">123 Digital Avenue<br/>Tech City, TC 12345</p>
-        </div>
-        <div class="flex justify-end">
-          <button class="rounded-full w-20 h-20 bg-white text-[#FF6B35] hover:bg-white/90 transition-transform hover:scale-110 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-
-
-
-
-
-
-    <!-- script file for the -->
     <script>
- 
-  const faqItems = document.querySelectorAll('.faq-item, .space-y-4 > div');
+        const faqItems = document.querySelectorAll('.faq-card');
 
-  faqItems.forEach(item => {
-    const btn = item.querySelector('button');
-    const content = item.querySelector('div');
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-question-button');
+            const content = item.querySelector('.faq-answer');
+            const icon = item.querySelector('.faq-icon');
 
-    btn.addEventListener('click', () => {
-      const isOpen = !content.classList.contains('hidden');
+            if (btn && content && icon) {
+                btn.addEventListener('click', () => {
+                    const isOpen = content.classList.contains('open');
 
-      // Close all FAQ items
-      faqItems.forEach(f => {
-        f.querySelector('div').classList.add('hidden');
-        const svg = f.querySelector('svg');
-        if (svg) svg.classList.remove('rotate-45');
-      });
+                    // Close all FAQ items
+                    faqItems.forEach(f => {
+                        const fContent = f.querySelector('.faq-answer');
+                        const fIcon = f.querySelector('.faq-icon');
+                        if (fContent) fContent.classList.remove('open');
+                        if (fIcon) fIcon.classList.remove('open');
+                    });
 
-      // Toggle the clicked item
-      if (!isOpen) {
-        content.classList.remove('hidden');
-        const svg = btn.querySelector('svg');
-        if (svg) svg.classList.add('rotate-45');
-      }
-    });
-  });
+                    // Toggle the clicked item
+                    if (!isOpen) {
+                        content.classList.add('open');
+                        icon.classList.add('open');
+                    }
+                });
+            }
+        });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
