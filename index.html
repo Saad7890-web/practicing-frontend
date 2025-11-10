@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Thrive - Creative Digital Agency</title>
+    <meta name="description" content="Digital Thrive is a full-service creative agency specializing in brand identity, web design, digital marketing, and video production. Transform your digital presence today." />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Custom Design System */
+        :root {
+            --background: 30 20% 98%;
+            --foreground: 20 10% 10%;
+            --primary: 16 90% 60%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 30 15% 92%;
+            --secondary-foreground: 20 10% 10%;
+            --muted: 30 15% 92%;
+            --muted-foreground: 20 8% 45%;
+            --border: 30 15% 88%;
+            --dark-section: 20 15% 10%;
+            --dark-section-foreground: 30 10% 95%;
+        }
+        
+        body {
+            background: hsl(30 20% 98%);
+            color: hsl(20 10% 10%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        .accordion-item {
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .accordion-trigger {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: transparent;
+            border: none;
+            color: hsl(20 10% 10%);
+        }
+        
+        .accordion-trigger:hover {
+            background: hsl(30 15% 95%);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+            color: hsl(20 8% 45%);
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem 1.5rem;
+        }
+        
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+        
+        .chevron.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(30 20% 98%)',
+                        foreground: 'hsl(20 10% 10%)',
+                        primary: {
+                            DEFAULT: 'hsl(16 90% 60%)',
+                            foreground: 'hsl(0 0% 100%)'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(30 15% 92%)',
+                            foreground: 'hsl(20 10% 10%)'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(30 15% 92%)',
+                            foreground: 'hsl(20 8% 45%)'
+                        },
+                        border: 'hsl(30 15% 88%)',
+                        dark: {
+                            DEFAULT: 'hsl(20 15% 10%)',
+                            foreground: 'hsl(30 10% 95%)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                    <span class="text-primary-foreground font-bold text-sm">DT</span>
+                </div>
+                <span class="text-xl font-bold">DIGITAL THRIVE</span>
+            </div>
+            <button class="p-2 hover:bg-secondary rounded-lg transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="container mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                        DIGITAL<br>
+                        <span class="text-primary">THRIVE</span>
+                    </h1>
+                    <p class="text-lg text-muted-foreground mb-8 max-w-md">
+                        We craft digital experiences that help your brand thrive in the modern landscape. 
+                        Creative solutions for ambitious businesses.
+                    </p>
+                    <button class="bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity inline-flex items-center gap-2">
+                        Get Started
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="relative">
+                    <img src="hero-office.jpg" alt="Modern workspace" class="rounded-3xl w-full h-auto shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agency Section -->
+    <section class="py-20 px-6 bg-secondary">
+        <div class="container mx-auto">
+            <div class="max-w-4xl">
+                <h2 class="text-5xl font-bold mb-8">Agency</h2>
+                <p class="text-lg text-muted-foreground leading-relaxed">
+                    We are a full-service digital agency dedicated to creating exceptional 
+                    experiences that drive growth and engagement. Our team combines creativity 
+                    with strategic thinking to deliver solutions that exceed expectations and 
+                    help businesses thrive in the digital age.
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="bg-white p-8 text-center border-2 border-border hover:border-primary transition-colors rounded-lg">
+                    <div class="text-5xl font-bold text-primary mb-2">250+</div>
+                    <div class="text-muted-foreground uppercase tracking-wider text-sm">Happy Clients</div>
+                </div>
+                <div class="bg-white p-8 text-center border-2 border-border hover:border-primary transition-colors rounded-lg">
+                    <div class="text-5xl font-bold text-primary mb-2">500+</div>
+                    <div class="text-muted-foreground uppercase tracking-wider text-sm">Videos Produced</div>
+                </div>
+                <div class="bg-white p-8 text-center border-2 border-border hover:border-primary transition-colors rounded-lg">
+                    <div class="text-5xl font-bold text-primary mb-2">150+</div>
+                    <div class="text-muted-foreground uppercase tracking-wider text-sm">Brand Identities</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto">
+            <div class="flex items-center gap-4 mb-12 flex-wrap">
+                <h2 class="text-4xl font-bold">WORK</h2>
+                <span class="text-muted-foreground">•</span>
+                <span class="text-muted-foreground">SEQUENCE</span>
+                <span class="text-muted-foreground">•</span>
+                <span class="text-muted-foreground">DESIGN</span>
+                <span class="text-muted-foreground">•</span>
+                <span class="text-muted-foreground">WORK</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="work-1.jpg" alt="Project 1" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Minimal Workspace</h3>
+                    <p class="text-muted-foreground">Brand Identity • 2024</p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="work-2.jpg" alt="Project 2" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Modern Interior</h3>
+                    <p class="text-muted-foreground">Architecture • 2024</p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="work-3.jpg" alt="Project 3" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Creative Studio</h3>
+                    <p class="text-muted-foreground">Product Design • 2024</p>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="work-4.jpg" alt="Project 4" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Digital Design</h3>
+                    <p class="text-muted-foreground">UI/UX Design • 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 px-6 bg-dark text-dark-foreground">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12">Our Services</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white/5 border border-white/10 hover:bg-white/10 transition-colors rounded-lg">
+                    <div class="p-6 flex items-center justify-between group cursor-pointer">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Brand Identity</h3>
+                            <p class="text-white/70">Complete brand development from concept to execution</p>
+                        </div>
+                        <svg class="w-6 h-6 text-primary group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 hover:bg-white/10 transition-colors rounded-lg">
+                    <div class="p-6 flex items-center justify-between group cursor-pointer">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Web Design</h3>
+                            <p class="text-white/70">Beautiful, responsive websites that convert visitors</p>
+                        </div>
+                        <svg class="w-6 h-6 text-primary group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 hover:bg-white/10 transition-colors rounded-lg">
+                    <div class="p-6 flex items-center justify-between group cursor-pointer">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Digital Marketing</h3>
+                            <p class="text-white/70">Strategic campaigns that drive real results</p>
+                        </div>
+                        <svg class="w-6 h-6 text-primary group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 border border-white/10 hover:bg-white/10 transition-colors rounded-lg">
+                    <div class="p-6 flex items-center justify-between group cursor-pointer">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Video Production</h3>
+                            <p class="text-white/70">Engaging visual content that tells your story</p>
+                        </div>
+                        <svg class="w-6 h-6 text-primary group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-6">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-4xl font-bold mb-12">FAQs</h2>
+            
+            <div class="space-y-4">
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                        <span>What services do you offer?</span>
+                        <svg class="w-5 h-5 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        We offer a comprehensive range of digital services including brand identity design, 
+                        web design and development, digital marketing, video production, and strategic consulting.
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                        <span>How long does a typical project take?</span>
+                        <svg class="w-5 h-5 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        Project timelines vary depending on scope and complexity. A typical branding project 
+                        takes 4-6 weeks, while website development can range from 6-12 weeks.
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                        <span>What is your pricing structure?</span>
+                        <svg class="w-5 h-5 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        We offer flexible pricing based on project requirements. We can work on a fixed 
+                        project fee or hourly rate basis. Contact us for a detailed quote.
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-trigger" onclick="toggleAccordion(this)">
+                        <span>Do you work with startups?</span>
+                        <svg class="w-5 h-5 chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        Yes! We love working with startups and offer special packages designed to help 
+                        early-stage companies establish their digital presence.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-20 px-6 bg-secondary">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12">Latest Post</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white overflow-hidden hover:shadow-lg transition-shadow rounded-lg">
+                    <img src="blog-1.jpg" alt="Blog post 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-primary font-semibold">DESIGN TIPS</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">
+                            Creating Better User Experiences in 2024
+                        </h3>
+                        <p class="text-muted-foreground mb-4">
+                            Explore the latest trends and best practices for modern UX design...
+                        </p>
+                        <a href="#" class="text-foreground font-semibold inline-flex items-center gap-2 hover:text-primary transition-colors">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden hover:shadow-lg transition-shadow rounded-lg">
+                    <img src="blog-2.jpg" alt="Blog post 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-primary font-semibold">MARKETING</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">
+                            Social Media Strategy That Works
+                        </h3>
+                        <p class="text-muted-foreground mb-4">
+                            Learn how to build an effective social media presence for your brand...
+                        </p>
+                        <a href="#" class="text-foreground font-semibold inline-flex items-center gap-2 hover:text-primary transition-colors">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white overflow-hidden hover:shadow-lg transition-shadow rounded-lg">
+                    <img src="blog-3.jpg" alt="Blog post 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-primary font-semibold">BUSINESS</span>
+                        <h3 class="text-xl font-semibold mt-2 mb-3">
+                            Digital Transformation for Modern Businesses
+                        </h3>
+                        <p class="text-muted-foreground mb-4">
+                            Why every business needs a strong digital strategy in today's market...
+                        </p>
+                        <a href="#" class="text-foreground font-semibold inline-flex items-center gap-2 hover:text-primary transition-colors">
+                            Read More
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 bg-primary text-primary-foreground">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h2 class="text-6xl font-bold mb-6">PIKIZ</h2>
+                <p class="text-white/80 mb-8 max-w-md mx-auto">
+                    Ready to transform your digital presence? Let's create something amazing together.
+                </p>
+                <button class="bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity">
+                    Start Your Project
+                </button>
+            </div>
+
+            <div class="mt-16 pt-8 border-t border-white/20 text-center text-sm text-white/60">
+                <p>© 2024 Pikiz Digital Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const chevron = button.querySelector('.chevron');
+            const allContents = document.querySelectorAll('.accordion-content');
+            const allChevrons = document.querySelectorAll('.chevron');
+            
+            // Close all other accordions
+            allContents.forEach(item => {
+                if (item !== content) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            allChevrons.forEach(icon => {
+                if (icon !== chevron) {
+                    icon.classList.remove('rotate');
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            chevron.classList.toggle('rotate');
+        }
+    </script>
+</body>
+</html>
