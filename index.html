@@ -1,394 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pikiz - Digital Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Thrive - Agency Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-container">
-            <div class="logo-wrapper">
-                <div class="logo-icon">✦</div>
-                <span class="logo-text">Pikiz</span>
-            </div>
-            <nav class="main-navigation">
-                <ul class="nav-list">
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#works" class="nav-link">Works</a></li>
-                    <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li><a href="#blog" class="nav-link">Blog</a></li>
-                </ul>
-            </nav>
-            <button class="header-button">Let's Talk</button>
-        </div>
+     <header class="navbar">
+        <div class="logo">Pikiz</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+        <button class="cta-btn">Let’s Talk</button>
     </header>
-
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">🚀 Innovating Digital Solutions</div>
-                <h1 class="hero-title">
-                    <span class="hero-title-dark">DIGITAL</span><br>
-                    <span class="hero-title-accent">THRIVE</span>
-                </h1>
-                <p class="hero-description">
-                    Transform your business with cutting-edge digital strategy, design, and development solutions tailored to your success.
-                </p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">Start Project</button>
-                    <button class="btn-secondary">Learn More</button>
+     
+    <section class="hero">
+        <div class="hero-left">
+            <div class="customers">
+                <div class="avatars">
+                    <img src="assets/work-1.jpg" alt="User 1">
+                    <img src="assets/work-2.jpg" alt="User 2">
+                    <img src="assets/work-3.jpg" alt="User 3">
                 </div>
+                <p><strong>15000+</strong><br> Satisfied Customers</p>
             </div>
-            <div class="hero-image-wrapper">
-                <img class="hero-image" src="./assets/hero-person.jpg" alt="Hero Person">
+
+            <h1>DIGITAL<br>THRIVE</h1>
+        </div>
+
+        <div class="hero-right">
+            <div class="quick-glimpse">
+                <h3>Quick Glimpse</h3>
+                <p>Our services are designed to craft impactful digital solutions while addressing your problems through strategy, innovation, and analysis.</p>
             </div>
+
+            <div class="arrow">→</div>
+
+            <ul class="services-list">
+                <li>Web Development</li>
+                <li>UI/UX Design</li>
+                <li>Brand Identity</li>
+                <li>Digital Marketing</li>
+            </ul>
         </div>
     </section>
 
-    <!-- Agency Stats -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-circle stat-mint">
-                <div class="stat-number">7.1k</div>
-                <div class="stat-label">Happy Clients</div>
-            </div>
-            <div class="stat-circle stat-orange">
-                <div class="stat-number">1200</div>
-                <div class="stat-label">Projects Done</div>
-            </div>
-            <div class="stat-circle stat-teal">
-                <div class="stat-number">20k</div>
-                <div class="stat-label">Hours Invested</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Keywords Strip -->
-    <section class="keywords-section">
-        <div class="keywords-container">
-            <div class="keyword-item">DIGITAL WORK</div>
-            <div class="keyword-item">FEATURE DESIGN</div>
-            <div class="keyword-item">DESIGN MARK</div>
-            <div class="keyword-item">BRANDING</div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio-section" id="works">
-        <div class="portfolio-container">
-            <h2 class="portfolio-title">Our Recent Works</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-column">
-                    <div class="portfolio-item">
-                        <img src="assets/work-1.jpg" alt="Interior Design" class="portfolio-image portfolio-image-tall">
-                        <div class="portfolio-label">
-                            <p class="portfolio-label-text">Interior Design</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="assets/work-2.jpg" alt="Brand Strategy" class="portfolio-image portfolio-image-medium">
-                        <div class="portfolio-label">
-                            <p class="portfolio-label-text">Brand Strategy</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-column">
-                    <div class="portfolio-item">
-                        <img src="assets/work-3.jpg" alt="Collaboration" class="portfolio-image portfolio-image-medium">
-                        <div class="portfolio-label">
-                            <p class="portfolio-label-text">Collaboration</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="assets/work-4.jpg" alt="Creative Work" class="portfolio-image portfolio-image-tall">
-                        <div class="portfolio-label">
-                            <p class="portfolio-label-text">Creative Work</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-column">
-                    <div class="portfolio-item">
-                        <img src="assets/work-5.jpg" alt="Web Design" class="portfolio-image portfolio-image-tall">
-                        <div class="portfolio-label">
-                            <p class="portfolio-label-text">Web Design</p>
-                        </div>
-                    </div>
-                    <div class="portfolio-item">
-                        <img src="assets/work-6.jpg" alt="Consultation" class="portfolio-image portfolio-image-medium">
-                        <div class="portfolio-label">
-                            <p class="portfolio-label-text">Consultation</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <div class="services-container">
-            <div class="services-header">
-                <h2 class="services-title">Our Services</h2>
-                <p class="services-description">
-                    We provide comprehensive digital solutions tailored to elevate your brand and drive sustainable growth in the digital landscape.
-                </p>
-            </div>
-            <div class="services-list">
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <img src="assets/service-1.jpg" alt="Brand Strategy" class="service-image">
-                        <div class="service-text">
-                            <h3 class="service-name">Brand Strategy</h3>
-                            <p class="service-description">
-                                Crafting compelling brand identities that resonate with your target audience and stand out in the market.
-                            </p>
-                        </div>
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <img src="assets/service-2.jpg" alt="Web Design" class="service-image">
-                        <div class="service-text">
-                            <h3 class="service-name">Web Design</h3>
-                            <p class="service-description">
-                                Creating stunning, user-friendly websites that deliver exceptional experiences and drive conversions.
-                            </p>
-                        </div>
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <img src="assets/service-3.jpg" alt="Digital Marketing" class="service-image">
-                        <div class="service-text">
-                            <h3 class="service-name">Digital Marketing</h3>
-                            <p class="service-description">
-                                Implementing data-driven marketing strategies to maximize your online presence and ROI.
-                            </p>
-                        </div>
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-content">
-                        <img src="assets/service-4.jpg" alt="Creative Solutions" class="service-image">
-                        <div class="service-text">
-                            <h3 class="service-name">Creative Solutions</h3>
-                            <p class="service-description">
-                                Delivering innovative creative solutions that bring your vision to life and captivate your audience.
-                            </p>
-                        </div>
-                        <div class="service-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section" id="faq">
-        <div class="faq-container">
-            <div class="faq-header">
-                <h2 class="faq-title">FAQ</h2>
-                <div class="faq-icon-badge">
-                    <span>✦</span>
-                </div>
-            </div>
-            <div class="faq-list">
-                <div class="faq-card">
-                    <button class="faq-question-button">
-                        <span>What services do you offer?</span>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        We offer comprehensive digital services including brand strategy, web design, digital marketing, and creative solutions tailored to your business needs.
-                    </div>
-                </div>
-                <div class="faq-card">
-                    <button class="faq-question-button">
-                        <span>How long does a typical project take?</span>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        Project timelines vary based on scope and complexity, but most projects are completed within 4-12 weeks from start to finish.
-                    </div>
-                </div>
-                <div class="faq-card">
-                    <button class="faq-question-button">
-                        <span>What is your pricing structure?</span>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        We offer flexible pricing based on project requirements. Contact us for a detailed quote tailored to your specific needs.
-                    </div>
-                </div>
-                <div class="faq-card">
-                    <button class="faq-question-button">
-                        <span>Do you provide ongoing support?</span>
-                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                        </svg>
-                    </button>
-                    <div class="faq-answer">
-                        Yes, we offer ongoing support and maintenance packages to ensure your digital assets continue to perform optimally.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog-section" id="blog">
-        <div class="blog-container">
-            <h2 class="blog-title">Latest Posts</h2>
-            <div class="blog-list">
-                <div class="blog-post">
-                    <div class="blog-number">01</div>
-                    <div class="blog-content">
-                        <p class="blog-date">March 15, 2024</p>
-                        <h3 class="blog-post-title">How to build a successful digital strategy for your business</h3>
-                    </div>
-                    <img src="assets/blog-1.jpg" alt="Blog 1" class="blog-thumbnail">
-                    <div class="blog-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <div class="blog-number">02</div>
-                    <div class="blog-content">
-                        <p class="blog-date">March 10, 2024</p>
-                        <h3 class="blog-post-title">The future of web design: Trends to watch in 2024</h3>
-                    </div>
-                    <img src="assets/blog-2.jpg" alt="Blog 2" class="blog-thumbnail">
-                    <div class="blog-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                </div>
-                <div class="blog-post">
-                    <div class="blog-number">03</div>
-                    <div class="blog-content">
-                        <p class="blog-date">March 5, 2024</p>
-                        <h3 class="blog-post-title">Maximizing ROI through data-driven marketing campaigns</h3>
-                    </div>
-                    <img src="assets/blog-3.jpg" alt="Blog 3" class="blog-thumbnail">
-                    <div class="blog-arrow">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="cta-container">
-            <h2 class="cta-title">Smart Strategies. Smarter Digital Solutions. Digital Solutions With Purpose</h2>
-            <button class="cta-button">Get Started</button>
-        </div>
-    </section>
-
-    <!-- Contact Footer -->
-    <footer class="site-footer">
-        <h2 class="footer-logo">PIKIZ</h2>
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <h3 class="footer-heading">Let's Talk</h3>
-                    <p class="footer-description">
-                        Ready to elevate your digital presence? Get in touch with us today and let's create something amazing together.
-                    </p>
-                </div>
-                <div class="footer-right">
-                    <div class="footer-contact">
-                        <p class="footer-contact-item">hello@pikiz.com</p>
-                        <p class="footer-contact-item">+1 (555) 123-4567</p>
-                        <p class="footer-contact-item">123 Digital Avenue<br/>Tech City, TC 12345</p>
-                    </div>
-                    <div class="footer-action">
-                        <button class="footer-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 7l-10 10m0-10h10v10" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        const faqItems = document.querySelectorAll('.faq-card');
-
-        faqItems.forEach(item => {
-            const btn = item.querySelector('.faq-question-button');
-            const content = item.querySelector('.faq-answer');
-            const icon = item.querySelector('.faq-icon');
-
-            if (btn && content && icon) {
-                btn.addEventListener('click', () => {
-                    const isOpen = content.classList.contains('open');
-
-                    // Close all FAQ items
-                    faqItems.forEach(f => {
-                        const fContent = f.querySelector('.faq-answer');
-                        const fIcon = f.querySelector('.faq-icon');
-                        if (fContent) fContent.classList.remove('open');
-                        if (fIcon) fIcon.classList.remove('open');
-                    });
-
-                    // Toggle the clicked item
-                    if (!isOpen) {
-                        content.classList.add('open');
-                        icon.classList.add('open');
-                    }
-                });
-            }
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
