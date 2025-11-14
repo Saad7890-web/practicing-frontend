@@ -297,3 +297,100 @@ body {
     font-weight: bold;
 }
 
+
+.services-section {
+    background: black;
+    padding: 100px;
+    color: #fff;
+}
+
+.services-header .section-tag {
+    color: #ff6b35;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.services-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.services-top h2 {
+    font-size: 48px;
+    font-weight: bolder;
+}
+
+.services-top p {
+    width: 45%;
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.service-card {
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.service-card img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 25px;
+}
+
+
+.service-info {
+    flex: 1;
+}
+
+.service-info h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.service-info p {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+
+.tags span {
+    background: #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 8px;
+}
+
+.service-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.orange-btn {
+    background: #ff6b35;
+    color: #fff;
+}
+
+.white-btn {
+    background: #fff;
+    color: #111;
+}
