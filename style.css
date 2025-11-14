@@ -394,3 +394,130 @@ body {
     background: #fff;
     color: #111;
 }
+
+.latest-post-section {
+    padding: 40px 0;
+}
+
+.container {
+    width: 75%;
+    margin: auto;
+}
+
+.small-title {
+    font-size: 14px;
+    color: #ff4f00;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+
+.post-card {
+    background: #ffffffc4;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.left {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+}
+
+.icon-round {
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.info h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.tags {
+    margin-top: 10px;
+}
+
+.tags span {
+    padding: 4px 10px;
+    background: #efefef;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.thumb {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.right {
+    flex: 1;
+    text-align: center;
+}
+
+.arrow-btn {
+    width: 50px;
+    height: 50px;
+    background: #f2f2f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.desc {
+    font-size: 14px;
+    color: #444;
+}
+
+
+.big-text-area {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.big-text-area h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.big-text-area span {
+    color: #222;
+    font-weight: 600;
+}
+
+.big-text-area .highlight {
+    color: #ff4f00;
+}
+
+.learn-btn {
+    background: #ff4f00;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
